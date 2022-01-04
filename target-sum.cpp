@@ -23,7 +23,7 @@ public:
             dp[i][0] = 1;
         
         for (int i = 1; i < nums.size() + 1; i++) {
-            for (int j = 0; j < target + 1; j++) { // starting from zero, because we are considering zero
+            for (int j = 0; j < target + 1; j++) { // starting from zero, because we are considering elements with zero value
                 if (nums[i - 1] <= j) {
                     dp[i][j] = dp[i - 1][j - nums[i - 1]] + dp[i - 1][j];
                 }
