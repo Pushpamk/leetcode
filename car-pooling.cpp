@@ -6,9 +6,11 @@ public:
             stops[t[1]] += t[0];
             stops[t[2]] -= t[0];
         }
-        for (int i = 0; capacity >= 0 && i < 1001; i++) {
+        for (int i = 0; i < 1001; i++) {
             capacity -= stops[i];
+            if (capacity < 0)
+                return false;
         }
-        return capacity >= 0;
+        return true;
     }
 };
